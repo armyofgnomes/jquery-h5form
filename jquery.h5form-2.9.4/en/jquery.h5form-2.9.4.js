@@ -352,12 +352,12 @@
 
 					// Maxlength
 					if (reqMaxlength && ui.is('textarea') &&
-						(maxlength = getAttr(ui, 'maxlength'))) {
+						(getAttr(ui, 'maxlength'))) {
 						// Keypress event attach
 						var evKeypress = (function(ev) {
 							var cc = ev.charCode || ev.keyCode;
 							if (($.inArray(cc, [8, 9, 37, 39, 46]) < 0) &&
-								(this.value.length >= maxlength)) {
+								(this.value.length >= getAttr(ui, 'maxlength'))) {
 								return false;
 							}
 							return true;
